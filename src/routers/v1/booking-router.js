@@ -1,5 +1,13 @@
 const express = require('express');
+const { BookingController } = require('../../controller');
+// const { booking_Controller } = require('../../controller/booking-controller');
 
-const router = express.Router();
+const bookingRouter = express.Router();
 
-router
+/**
+ * http://localhost:2000/api/v1/bookings/
+ */
+bookingRouter.post('/',BookingController.booking_Controller);
+
+
+module.exports = bookingRouter;

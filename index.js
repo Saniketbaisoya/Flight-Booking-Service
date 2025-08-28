@@ -1,11 +1,13 @@
 const express = require('express');
 const { serverConfig } = require('./src/config');
+const router = require('./src/routers/Router');
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
-
+// http://localhost:2000/api
+app.use('/api',router);
 
 
 app.listen(serverConfig.PORT,() =>{
