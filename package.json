@@ -8,7 +8,7 @@
   },
   "author": "Shaniket Baisoya",
   "license": "ISC",
-  "description": "",
+  "description": "This is the Booking Service where client request to Book on the Flight Service",
   "dependencies": {
     "axios": "^1.11.0",
     "dotenv": "^17.2.1",

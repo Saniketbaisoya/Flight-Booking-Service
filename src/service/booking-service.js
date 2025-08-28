@@ -62,12 +62,9 @@ async function  createBooking(data) {
  * Now again iss feature ko bhi in one operation hmme complete krna hai...(transaction)
  */
 async function makePayment(data){
-    console.log("inside")
     const transaction = await db.sequelize.transaction();
     try {
-        console.log("inside 1")
         const bookingDetails = await new BookingRepository().get(data.bookingId, transaction);
-        console.log(bookingDetails);
         if(bookingDetails.status == CANCELLED){
             throw new AppError("The booking has expired",StatusCodes.BAD_REQUEST);
         }
