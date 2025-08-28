@@ -9,5 +9,8 @@ const bookingRouter = express.Router();
  */
 bookingRouter.post('/',BookingController.booking_Controller);
 
-
+/**
+ * http://localhost:2000/api/v1/bookings/payments
+ */
+bookingRouter.post('/payments',BookingController.makePayment_Controller);
 module.exports = bookingRouter;
