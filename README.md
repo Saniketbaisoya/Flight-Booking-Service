@@ -38,6 +38,8 @@ If you're setting up your development environment, then write the username of yo
 
 If you're setting up test or prod environment, make sure you also replace the host with the hosted db url.
 
-To run the server execute
+To run the server, use the following command:
 
+```bash
 npm run dev
+
