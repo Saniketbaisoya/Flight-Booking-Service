@@ -5,7 +5,6 @@ This project demonstrates a **microservices-based architecture** using Node.js, 
 ## 📂 Services
 - **Booking Service (PORT 2000):** Handles booking requests.
 - **Flight Service (PORT 1000):** Manages flight data.
-- **API Gateway (optional):** Routes requests to services.
 
 ## 🔗 How Services Talk
 - Booking Service → calls Flight Service to fetch flight availability.
