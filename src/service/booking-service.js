@@ -8,6 +8,7 @@ const {BookingRepository} = require('../repository');
 
 const {Enum} = require('../utils/common');
 const {BOOKED, CANCELLED ,INITIATED, PENDING} = Enum.BOOKING_STATUS;
+
 async function  createBooking(data) {
     const transaction = await db.sequelize.transaction();
     try {
@@ -70,8 +71,8 @@ async function makePayment(data){
         }
         const currentTime = new Date();
         const bookingTime = new Date(bookingDetails.createdAt);
-
-        if((currentTime - bookingTime > 300000 && bookingDetails.status == INITIATED) || (currentTime - bookingTime > 300000 && bookingDetails.status == PENDING) ){
+        // if the time of the payment go above 30 sec of the bookingStatus then the booking would be cancel and seats are updated corressponding to the bookingId
+        if((currentTime - bookingTime > 30000 && bookingDetails.status == INITIATED) || (currentTime - bookingTime > 30000 && bookingDetails.status == PENDING) ){
             await cancelBooking(data.bookingId);
             throw new AppError("The booking has expired",StatusCodes.BAD_REQUEST)
         }
