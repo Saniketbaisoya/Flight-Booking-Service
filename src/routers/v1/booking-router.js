@@ -5,7 +5,7 @@ const { BookingController } = require('../../controller');
 const bookingRouter = express.Router();
 
 /**
- * http://localhost:2000/api/v1/bookings/
+ * http://localhost:2000/api/v1/bookings
  */
 bookingRouter.post('/',BookingController.booking_Controller);
 
